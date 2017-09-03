@@ -2,11 +2,14 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as glob from 'glob';
 
 const config = vscode.workspace.getConfiguration( "railsi18n" );
 
 function showi18nFiles(args):void {
-  console.log("haha");
+  glob(config.include, {}, function(er, files) {
+    console.log(files);
+  });
 }
 
 // this method is called when your extension is activated

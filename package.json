@@ -21,7 +21,17 @@
                 "title": "Show i18n files",
                 "category": "Rails i18n"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Rails i18n settings",
+            "properties": {
+              "railsi18n.include": {
+                "type": "string",
+                "default": "config/locales/**/*.yml",
+                "description": "Where to look for locale files"
+              }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
@@ -35,5 +45,8 @@
         "mocha": "^2.3.3",
         "@types/node": "^6.0.40",
         "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "glob": "^7.1.2"
     }
 }
