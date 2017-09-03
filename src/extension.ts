@@ -4,6 +4,7 @@
 import * as vscode from 'vscode';
 import * as glob from 'glob';
 import * as yaml from 'js-yaml';
+import { I18nIntellisense } from './I18nIntellisense';
 
 const config = vscode.workspace.getConfiguration( "railsi18n" );
 
@@ -18,6 +19,10 @@ function showi18nFiles(args):void {
 export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(vscode.commands.registerCommand('railsi18n.showLocaleFiles', showi18nFiles));
+
+    const provider = new I18nIntellisense();
+    const triggers = ['.'];
+    context.subscriptions.push(vscode.languages.registerCompletionItemProvider('*', provider, ...triggers));
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
