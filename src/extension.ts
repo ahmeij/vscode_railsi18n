@@ -3,6 +3,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as glob from 'glob';
+import * as yaml from 'js-yaml';
 
 const config = vscode.workspace.getConfiguration( "railsi18n" );
 
@@ -69,7 +70,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!activeEditor) {
         return;
       }
-      const regEx = /[\s\.](t\([^)]+\))/g;
+      const regEx = /([\s\.]|I18n\.)(t\([^)]+\))/g;
       const text = activeEditor.document.getText();
       const i18nPresentDecorations: vscode.DecorationOptions[] = [];
       let match;

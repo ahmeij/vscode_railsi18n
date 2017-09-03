@@ -25,11 +25,11 @@
         "configuration": {
             "title": "Rails i18n settings",
             "properties": {
-              "railsi18n.include": {
-                "type": "string",
-                "default": "config/locales/**/*.yml",
-                "description": "Where to look for locale files"
-              }
+                "railsi18n.include": {
+                    "type": "string",
+                    "default": "config/locales/**/*.yml",
+                    "description": "Where to look for locale files"
+                }
             }
         }
     },
@@ -47,6 +47,7 @@
         "@types/mocha": "^2.2.32"
     },
     "dependencies": {
-        "glob": "^7.1.2"
+        "glob": "^7.1.2",
+        "js-yaml": "^3.9.1"
     }
 }
