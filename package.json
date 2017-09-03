@@ -5,20 +5,21 @@
     "version": "0.0.1",
     "publisher": "ahmeij",
     "engines": {
-        "vscode": "^1.15.0"
+        "vscode": "^1.15.1"
     },
     "categories": [
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "railsi18n.showLocaleFiles",
+                "title": "Show i18n files",
+                "category": "Rails i18n"
             }
         ]
     },
@@ -30,7 +31,7 @@
     },
     "devDependencies": {
         "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
+        "vscode": "^1.5.1",
         "mocha": "^2.3.3",
         "@types/node": "^6.0.40",
         "@types/mocha": "^2.2.32"
